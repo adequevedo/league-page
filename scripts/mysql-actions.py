@@ -1,8 +1,17 @@
 import mysql.connector
 from espn_api.football import League
 import os, json, re
+from dotenv import load_dotenv
+load_dotenv()
 
-mydb = mysql.connector.connect(host='remotemysql.com',database='gH2RrQirXv',user='gH2RrQirXv',password='QeEJr7upsz')
+host = os.environ.get('HOST')
+dbname = os.environ.get('DB_NAME')
+user = os.environ.get('USER')
+db_pass = os.environ.get('DB_PASS')
+espn_s2 = os.environ.get('ESPN-S2')
+swid = os.environ.get('SWID')
+
+mydb = mysql.connector.connect(host=host,database=dbname,user=user,password=db_pass)
 # used to populate db with data
 
 def create_yearly_stats():
@@ -31,13 +40,13 @@ def insert_data(owner, year, team_name, wins, losses, points_for, points_against
     mycursor.execute(sql, vals)
     mydb.commit()
     
-def main():
+def yearly_historical_inserts():
     year_start=2014
     year_end=2020
     league_id='1721747'
     
-    ESPN_S2='AEBsc%2BBB19uKgZkPt70zzaGwKqJj%2FvkjZsPv3c9QWwFWj5LLlbO9kHexW%2Fa3Z2cp8pAYOz5sOCsokGQOBEvrEbqJF%2B7EDZEcKnbnUX8Iv4daAPJ5X5gTBsd4cOTWn1PIbWXF380%2FlRHUgepq%2BMXIN3skmwzPslX3kEe%2F%2Bi87P85qPtsuj1vKu2xQ7%2Bcvz7NcYMNqQOQcAp5h%2FzI2Q%2F2nAipesOQoTNeiBpCGHDmsx8yTB3NRM3OKMKxyCJa%2Fk%2F1Y340aeOPEi8Kt3FEwv0GQXbQn6irNw%2F7PgDwP%2FkLWAM2y8ChdlHyLhi%2BEw2GwtuYtLPc%3D'
-    SWID='{D865F316-4356-40EE-B983-E7E07E53445F}'
+    ESPN_S2=espn_s2
+    SWID=swid
     
     stats = {}
     reg="\((.*?)\)"
@@ -82,6 +91,9 @@ def main():
     # inputs to head2head matchup algo
     with open('data.json', 'w') as outfile:
         json.dump(stats, outfile)
+    
+def main():
+    
 
     
 if __name__ == '__main__':
