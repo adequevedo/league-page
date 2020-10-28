@@ -1,16 +1,7 @@
-// function ListItemLink(props) {
-//   return <ListItem button component="a" {...props} />;
-// }
-//
-// //...
-//
-// <ListItemLink href="#simple-list">
-//   <ListItemText primary="Spam" />
-// </ListItemLink>
-
-
-
+import React, { Component } from 'react';
 import '../css/players.css';
+
+
 const years = {
   "2014": 
     {"steve Senesi": {"team_name": "Sosa Chamberlain", "owner": "steve Senesi", "wins": 7, "losses": 6, "points_for": 1245.0, "points_against": 1112.0, "season_finish": 4, "final_finish": 2, "scores": [79.0, 102.0, 91.0, 91.0, 81.0, 114.0, 90.0, 75.0, 131.0, 73.0, 99.0, 118.0, 101.0, 85.0, 117.0, 98.0], "mov": [-51.0, 26.0, -3.0, 21.0, -8.0, 56.0, -25.0, -6.0, 52.0, -16.0, 50.0, 14.0, 23.0, 26.0, 28.0, -4.0], "schedule": ["(Mcelwain Sucks We beat you RIP)", "(In Honor of Danny)", "(Alex DeQuevedos #1 Fan)", "(Brandocakes Cum up )", "(Texans Suck  More than FSU)", "(Trench  Sosa)", "(Fuck  ISIS)", "(Season Long Choke)", "(Texans Suck  More than FSU)", "(Trade  Raped)", "(In Honor of Danny)", "(Alex DeQuevedos #1 Fan)", "(Brandocakes Cum up )", "(In Honor of Danny)", "(Mcelwain Sucks We beat you RIP)", "(Trench  Sosa)"]}, 
@@ -22,22 +13,22 @@ const years = {
       }
 };
 
-const year = "2014";
-const owner = "Danny Kennell"
+//List all owners in league history and dispaly stats
+function Players () {
   
-const Players = () => (
-    
-  <ul>
-    {years.map(player => (
-      <li key={player.year.owner.team_name}>
-        <div>{player.year.owner.team_name}</div>
-        // <div>{player.year.owner.firstname}</div>
-        // <div>{player.year.owner.lastname}</div>
-        // <div>{player.year.owner.year}</div>
-      </li>
-    ))}
-  </ul>
-);
+  let names = ["al", "felde", "zach"]
+  const nameList = names.map((name) => 
+    <li>{name}</li>
+  );
+
+  return (
+    <ul>{nameList}</ul>
+  )
+  
+  
+}
+
+
 
     
 
