@@ -44,6 +44,7 @@ def yearly_historical_inserts():
     year_start=2014
     year_end=2020
     league_id='1721747'
+    print_json=False
     
     ESPN_S2=espn_s2
     SWID=swid
@@ -80,18 +81,20 @@ def yearly_historical_inserts():
         stats[str(year)] = tmp2
         tmp2 = {}
     
+    #Check if output is good 
     print(stats['2014']['Alex deQuevedo'])
-    # 
     print(stats['2018']['Alex deQuevedo'])
     print(stats['2019']['Alex deQuevedo'])
     
     
     
     
-    # inputs to head2head matchup algo
-    with open('data.json', 'w') as outfile:
-        json.dump(stats, outfile)
-    
+    if print_json:
+        with open('data.json', 'w') as outfile:
+            json.dump(stats, outfile)
+            
+            
+# choose what to run
 def main():
     
 
