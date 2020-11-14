@@ -5,7 +5,9 @@ function Summary(props) {
     <div>
     <h1>{props.name}</h1>
     <p>Record: {props.wins} - {props.losses}</p>
-    <p>Win %: {props.wins / (props.wins + props.losses)}</p>
+    <p>Win %: {(parseInt(props.wins)/(parseInt(props.wins) + parseInt(props.losses))).toFixed(4)}</p>
+    <p>Points For: {props.pointsFor}</p>
+    <p>Points Against: {props.pointsAgainst}</p>
     <p>Team Names: </p>
       {props.teamNames.map(name => (
         <li>
