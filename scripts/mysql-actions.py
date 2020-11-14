@@ -6,12 +6,12 @@ load_dotenv()
 
 host = os.environ.get('HOST')
 dbname = os.environ.get('DB_NAME')
-user = os.environ.get('USER')
+username = os.environ.get('USER')
 db_pass = os.environ.get('DB_PASS')
-espn_s2 = os.environ.get('ESPN-S2')
-swid = os.environ.get('SWID')
+ESPN_S2 = os.environ.get('ESPN-S2')
+SWID = os.environ.get('SWID')
 
-mydb = mysql.connector.connect(host=host,database=dbname,user=user,password=db_pass)
+#mydb = mysql.connector.connect(host=host,database=db_name,user=username,password=pass)
 # used to populate db with data
 
 def create_yearly_stats():
@@ -45,9 +45,6 @@ def yearly_historical_inserts():
     year_end=2020
     league_id='1721747'
     print_json=False
-
-    ESPN_S2=espn_s2
-    SWID=swid
 
     stats = {}
     reg="\((.*?)\)"
