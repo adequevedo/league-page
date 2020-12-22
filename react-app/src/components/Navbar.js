@@ -12,7 +12,7 @@ const NavBar = () => {
     <AppBar position="static">
       <Toolbar>
         <Grid
-        justify="space-between" // Add it here :)
+        justify="space-between"
         container
         spacing={24}
         >
@@ -23,11 +23,14 @@ const NavBar = () => {
           </Grid>
 
           <Grid item>
-            <Button variant="contained" color="primary" justifyContent="right">
+            <Button variant="contained" color="primary" justifyContent="right" href="/home">
             Home
             </Button>
-            <Button variant="contained" color="primary" justifyContent="right">
-            Players
+            <Button variant="contained" color="primary" justifyContent="right" href="/stats">
+            Stats
+            </Button>
+            <Button variant="contained" color="primary" justifyContent="right" href="/records">
+            Records
             </Button>
           </Grid>
         </Grid>
