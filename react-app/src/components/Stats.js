@@ -17,13 +17,14 @@ const Stats = () => {
   useEffect(() => {
     fetchData()
   }, []);
-  
+
 
   return (
     <div>
       <span>{JSON.stringify(state)}</span>
       <hr />
       <span>Has error: {JSON.stringify(hasError)}</span>
+
     </div>
   );
 };

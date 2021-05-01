@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 import Home from './Home'
 import Records from './Records'
 import Stats from './Stats'
+import LocalStats from './LocalStats'
 
 import {
   BrowserRouter as Router,
@@ -33,6 +34,9 @@ class App extends Component {
           </Route>
           <Route path="/stats">
             <Stats />
+          </Route>
+          <Route path="/localstats">
+            <LocalStats />
           </Route>
           <Route path="/">
             <Home />
