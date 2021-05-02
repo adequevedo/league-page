@@ -3,9 +3,11 @@ League page for Goodbye forever mr vo
 
 
 ## Run and deploy 
-npm start 
-npm run reploy 
+npm start <br>
+npm run deploy
 
+## TODO
+routing breaks with github pages
 
 
 
