@@ -1,5 +1,21 @@
 # league-page
 League page for Goodbye forever mr vo
+
+
+## Run and deploy 
+npm start 
+npm run reploy 
+
+
+
+
+
+
+
+
+
+
+# Depricated Information: 
 https://remotemysql.com/databases.php
 
 
