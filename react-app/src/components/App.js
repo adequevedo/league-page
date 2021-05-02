@@ -33,7 +33,7 @@ class App extends Component {
             <Records />
           </Route>
           <Route path="/stats">
-            <Stats />
+            <LocalStats />
           </Route>
           <Route path="/localstats">
             <LocalStats />
