@@ -6,39 +6,26 @@ var data = require('./data/yearly_stats.json')
 
 const LocalStats = () => {
   var dict = {};
-  for(var x in data){
-    // console.log(data[x]['owner'])
-    // console.log(data[x]['year'])
 
-    // dict.push({
-    //   key: dict[data[x]['owner']],
-    //   value: data[x]['year']: {
-    //           "team_name":data[x]['team_name']
-    //           "wins":data[x]['wins'],
-    //           "losses":data[x]['losses'],
-    //           "points_for":data[x]['points_for'],
-    //           "points_against":data[x]['points_against'],
-    //           "reg_season_finish":data[x]['season_finish'],
-    //           "final_finish":data[x]['final_finish']
-    //         }
-    // });
+  const listItems = data.map((x) =>
+        <li key={x.year}>
+          {x.owner}: {x.year}
+            <ul>
+              <li>Team Name: {x.team_name}</li>
+              <li>wins: {x.wins}</li>
+              <li>losses: {x.losses}</li>
+              <li>Points for: {x.points_for}</li>
+              <li>Points against: {x.points_against}</li>
+              <li>Regular Season Finish: {x.season_finish}</li>
+              <li>Post Season Finish: {x.final_finish}</li>
+            </ul>
+        </li>
+    );
 
-    // dict[data[x]['owner']] = {
-    //   data[x]['year']: {
-    //         "team_name":data[x]['team_name']
-    //         "wins":data[x]['wins'],
-    //         "losses":data[x]['losses'],
-    //         "points_for":data[x]['points_for'],
-    //         "points_against":data[x]['points_against'],
-    //         "reg_season_finish":data[x]['season_finish'],
-    //         "final_finish":data[x]['final_finish']
-    //       }
-    //     };
-  }
   console.log(dict)
   return (
     <div>
-      hi
+      {listItems}
     </div>
   );
 };
